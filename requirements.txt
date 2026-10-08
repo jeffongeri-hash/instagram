@@ -1,0 +1,5 @@
+# Tooling for the saved-reels-to-skill workflow.
+# ffmpeg is a system dependency (apt install ffmpeg / brew install ffmpeg).
+openai-whisper
+yt-dlp
+pytest-playwright

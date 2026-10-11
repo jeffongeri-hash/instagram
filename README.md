@@ -5,6 +5,13 @@ and sorted by the `saved-reels-to-skill` Claude Code skill. `vault/` holds the
 ranked plan, a note per reel, one file per technique, and each reel's caption
 and transcript. Videos and stills are never committed.
 
+[`vault/log.md`](vault/log.md) lists every reel that's been watched, with a
+link to the reel, a link to the creator who made it, the verdict and the
+technique.
+
+The workflow comes from
+https://www.murphmaxxing.com/vault/saved-reels-to-claude-skill.
+
 ## Setup on a Mac (one time)
 
 ```bash
@@ -44,12 +51,16 @@ Then send:
 - The skill works in `~/reel-vault`. Nothing in your projects changes until
   you approve items from the plan.
 
-When the plan is done, copy the keepers into this repo and commit:
+When the plan is done, copy the keepers into this repo, update the log and
+commit:
 
 ```bash
 python3 scripts/archive.py
 git add vault && git commit -m "Archive saved reels run"
 ```
+
+`archive.py` rewrites `vault/log.md` each time. Reels from earlier runs keep
+the date they were first logged; new ones get today's date.
 
 The next run only watches new saves; earlier notes carry over in `~/reel-vault`.
 

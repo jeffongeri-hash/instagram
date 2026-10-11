@@ -1,2 +1,13 @@
 __pycache__/
 .pytest_cache/
+.venv/
+
+# Reel media and browser state never belong in git.
+*.mp4
+*.webm
+*.mov
+*.m4a
+*.wav
+.chrome/
+vault/raw/items/*/frames/
+vault/raw/items/*/sheets/
